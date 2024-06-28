@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GPT',
-      theme: ThemeData.light(useMaterial3: true).copyWith(
-        scaffoldBackgroundColor: Pallete.whiteColor,
+      theme: ThemeData.dark(useMaterial3: true).copyWith(
+        scaffoldBackgroundColor: Colors.black87,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Pallete.blackColor,
+        ),
       ),
       home: const GptHome(),
     );
