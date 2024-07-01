@@ -17,7 +17,7 @@ class OpenAIService{
           "messages": [
             {
               'role': 'user',
-              'content': 'Does this message want to generate an AI picture, image, art or similar $prompt. Simply answer in yes or no',
+              'content': 'Does this message {$prompt} include generate a image or similar. Simply answer in yes or no',
             }
           ],
         }),
@@ -31,6 +31,7 @@ class OpenAIService{
           case 'yes':
           case 'Yes.':
           case 'yes.':
+          case 'YES':
             final res = await dallEAPI(prompt);
             return res;
           default:
@@ -92,6 +93,7 @@ class OpenAIService{
           'model' : 'dall-e-3',
           'prompt': prompt,
           'n': 1,
+          "size": "1024x1024"
         }),
       );
 
